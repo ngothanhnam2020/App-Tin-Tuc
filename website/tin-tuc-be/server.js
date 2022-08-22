@@ -12,6 +12,7 @@ app.use(cors());
 // api routes
 app.use('/api/news', require('./src/controllers/news.controller'));
 app.use('/api/topics', require('./src/controllers/topic.controller'));
+app.use('/api/rss', require('./src/controllers/rss.controller'));
 
 // global error handler
 // app.use(errorHandler);
