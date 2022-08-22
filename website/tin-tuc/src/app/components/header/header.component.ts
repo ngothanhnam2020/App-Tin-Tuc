@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TopicService } from 'src/app/services/topic.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private topicService : TopicService) { }
+
+  topics: any;
 
   ngOnInit(): void {
+
+    this.topicService.getAll().subscribe(res =>{
+      
+      this.topics = res
+    
+    });
   }
 
 }

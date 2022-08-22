@@ -391,11 +391,6 @@ button.btn:hover {
     width: 100%;
 }
 
-.top-news .tn-img:hover img {
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-}
-
 .top-news .tn-title {
     position: absolute;
     top: 0; 
@@ -510,11 +505,6 @@ button.btn:hover {
 
 .cat-news .cn-img img {
     width: 100%;
-}
-
-.cat-news .cn-img:hover img {
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
 }
 
 .cat-news .cn-title {
