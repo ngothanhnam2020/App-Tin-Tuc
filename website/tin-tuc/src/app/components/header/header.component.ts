@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { TopicService } from 'src/app/services/topic.service';
 
 @Component({
@@ -11,6 +12,10 @@ export class HeaderComponent implements OnInit {
   constructor(private topicService : TopicService) { }
 
   topics: any;
+  searchName: any;
+  searchForm: FormGroup = new FormGroup({
+      name: new FormControl(),
+  }); 
 
   ngOnInit(): void {
 
@@ -19,6 +24,7 @@ export class HeaderComponent implements OnInit {
       this.topics = res
     
     });
+
   }
 
 }

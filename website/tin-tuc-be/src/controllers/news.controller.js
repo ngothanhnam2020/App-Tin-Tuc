@@ -29,7 +29,6 @@ function getById(req, res, next) {
 }
 
 function getByTopic(req, res, next) {
-    console.log('getByTopic', req.params.id)
     newsService.getByTopic(req.params.id)
         .then(data => res.json(data))
         .catch(next);

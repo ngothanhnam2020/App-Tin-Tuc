@@ -24,7 +24,7 @@ import { CategoryComponent } from './components/category/category.component';
     BrowserModule,
     CarouselModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

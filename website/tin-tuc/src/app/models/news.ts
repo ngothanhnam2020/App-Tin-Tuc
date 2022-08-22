@@ -4,8 +4,6 @@ export class News {
 
     topic_id: number = 0;
 
-    source: string = '';
-
     link: string = '';
 
     title: string = '';
@@ -13,8 +11,6 @@ export class News {
     content: string = '';
 
     avatar: string = '';
-
-    audio: string = '';
 
     time: Date = new Date();
 
