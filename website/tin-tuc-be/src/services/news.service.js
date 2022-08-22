@@ -49,11 +49,8 @@ async function saveOne(data) {
         id,
         topicId,
         code,
-        source,
         link,
         title,
-        author,
-        summary,
         content,
         time,
         status
@@ -63,11 +60,8 @@ async function saveOne(data) {
         id,
         topicId,
         code,
-        source,
         link,
         title,
-        author,
-        summary,
         content,
         time,
         status
