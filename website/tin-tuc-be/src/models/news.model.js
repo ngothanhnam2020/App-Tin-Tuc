@@ -17,11 +17,6 @@ function model(sequelize) {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        source: {
-            field: 'source',
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         link: {
             field: 'link',
             type: DataTypes.STRING,
@@ -38,10 +33,6 @@ function model(sequelize) {
         },
         avatar: {
             field: 'avatar',
-            type: DataTypes.STRING,
-        },
-        audio: {
-            field: 'audio',
             type: DataTypes.STRING,
         },
         time: {

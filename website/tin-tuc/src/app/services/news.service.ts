@@ -23,6 +23,6 @@ export class NewsService {
 
   getByTopic(id: number): Observable<Array<News>>{  return this.http.get<Array<News>>(api + '/api/news/topic/' + id); }
 
-  search(){  return this.http.get(api + '/api/news/search/'); }
+  search(name: string){  return this.http.get(api + '/api/news/search/' + name); }
 
 }

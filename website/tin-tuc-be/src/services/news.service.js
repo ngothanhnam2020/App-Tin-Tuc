@@ -48,9 +48,12 @@ async function saveOne(data) {
     const {
         id,
         topicId,
+        code,
         source,
         link,
         title,
+        author,
+        summary,
         content,
         time,
         status
@@ -59,9 +62,12 @@ async function saveOne(data) {
     const params = {
         id,
         topicId,
+        code,
         source,
         link,
         title,
+        author,
+        summary,
         content,
         time,
         status
