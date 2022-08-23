@@ -1,0 +1,43 @@
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-wrap">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">{{topic.topicName}}</a></li>
+        </ul>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<div class="cat-news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 mt-5">
+                <div class="row cn-slider">
+                    <div class="col-md-12" *ngFor="let news of newsList; let i = index">
+                        <div class="cn-img" style="margin-bottom: 20px;">
+                            <div class="row">
+                                <div class="col-md-4"><img [src]="news.avatar" /></div>
+                                <div class="col-md-8">
+                                    <a href="/detail/{{news.id}}">{{news.title}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mt-5">
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h2 class="sw-title">Danh mục</h2>
+                        <div class="category">
+                            <ul *ngFor="let item of topics">
+                                <li><a href="/item/{{item.id}}">{{item.topicName}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
