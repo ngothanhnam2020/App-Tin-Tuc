@@ -7,7 +7,7 @@ const newsService = require('../services/news.service');
 router.get('/', getAll);
 router.get('/id/:id', getById);
 router.get('/topic/:id', getByTopic);
-router.get('/search', searchTitle);
+router.get('/search/:title', searchTitle);
 router.post('/', saveOne);
 
 module.exports = router;
@@ -22,8 +22,13 @@ function getAll(req, res, next) {
 }
 
 function getById(req, res, next) {
-    console.log(req.params.id);
     newsService.getById(req.params.id)
+        .then(data => res.json(data))
+        .catch(next);
+}
+
+function getByName(req, res, next) {
+    newsService.getByName(req.params.title)
         .then(data => res.json(data))
         .catch(next);
 }
@@ -35,7 +40,7 @@ function getByTopic(req, res, next) {
 }
 
 function searchTitle(req, res, next) {
-    newsService.searchTitle(req.query.keyword)
+    newsService.searchTitle(req.params.title)
         .then(data => res.json(data))
         .catch(next);
 }

@@ -11,6 +11,26 @@ async function getById(id) {
     return await getNews(id);
 }
 
+async function getNewsName(title) {
+    const s = '%' + title +'%'
+    const obj = await db.News.findAll({
+        where: {
+            title: {
+              [Op.like]: s
+            }
+        },
+        include: ['topic'],
+        order: [
+            ['id', 'DESC'],
+        ],
+    });
+    return obj;
+}
+
+async function getByName(title) {
+    return await getNewsName(title);
+}
+
 async function getAll(perPage, page, keyword) {
     return await db.News.findAll({
         include: ['topic'],

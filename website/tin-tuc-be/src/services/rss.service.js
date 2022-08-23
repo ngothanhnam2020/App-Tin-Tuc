@@ -4,26 +4,24 @@ const Parser = require('rss-parser');
 const parser = new Parser();
 
 const saveItem = async function(item) {
-    
-                // validate data
-                const news = await db.News.findOne({
-                    where: {
-                        link: item.guid
-                    },
-                });
+    const news = await db.News.findOne({
+        where: {
+            link: item.guid
+        },
+    });
 
-                if (!news) {
-                    const params = {
-                        topicId: 1,
-                        link: item.guid,
-                        title: item.title,
-                        content: item.contentSnippet,
-                        time: item.pubDate,
-                        status: true
-                    };
-                
-                    await  db.News.create(params);
-                }
+    if (!news) {
+        const params = {
+            topicId: 1,
+            link: item.guid,
+            title: item.title,
+            content: item.contentSnippet,
+            time: item.pubDate,
+            status: true
+        };
+    
+        await  db.News.create(params);
+    }
     return item;
   }
 
@@ -34,7 +32,7 @@ async function getRss(topicId) {
         URL = 'http://dtinews.vn//en/rss/020/index.html';
         break
         default:
-            URL = 'http://dtinews.vn//en/rss/020/index.html';
+            URL = 'https://tuoitre.vn/rss/nhip-song-tre.rss';
             break
     }
     let feed = await parser.parseURL(URL);

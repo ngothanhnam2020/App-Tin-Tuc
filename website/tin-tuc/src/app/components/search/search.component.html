@@ -1,20 +1,24 @@
-<!-- Breadcrumb Start -->
-<div class="breadcrumb-wrap">
+<div class="brand">
     <div class="container">
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">{{topic.topicName}}</a></li>
-        </ul>
+        <div class="row align-items-center" style="margin: 60px 0;">
+            <div class="col-lg-12 col-md-12">
+                <div class="b-search">
+                    <form method="post" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                        <input type="text" formControlName="name" placeholder="Search" />
+                        <button type="submit" name="search" class="button"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<!-- Breadcrumb End -->
 
 <div class="cat-news">
     <div class="container">
-        <div class="row">
+        <div class="row" *ngIf="dataSearch">
             <div class="col-md-9 mt-5">
                 <div class="row cn-slider">
-                    <div class="col-md-12" *ngFor="let news of newsList; let i = index">
+                    <div class="col-md-12" *ngFor="let news of dataSearch; let i = index">
                         <div class="cn-img" style="margin-bottom: 20px;">
                             <div class="row">
                                 <div class="col-md-4"><img [src]="news.avatar" /></div>
