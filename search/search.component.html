@@ -1,0 +1,48 @@
+<div class="brand">
+    <div class="container">
+        <div class="row align-items-center" style="margin: 60px 0;">
+            <div class="col-lg-12 col-md-12">
+                <div class="b-search">
+                    <form method="post" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                        <input type="text" formControlName="name" placeholder="Search" />
+                        <button type="submit" name="search" class="button"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cat-news">
+    <div class="container">
+        <div class="row" *ngIf="dataSearch">
+            <div class="col-md-9 mt-5">
+                <div class="row cn-slider">
+                    <div class="col-md-12" *ngFor="let news of dataSearch; let i = index">
+                        <div class="cn-img" style="margin-bottom: 20px;">
+                            <div class="row">
+                                <div class="col-md-4"><img [src]="news.avatar" /></div>
+                                <div class="col-md-8">
+                                    <a href="/detail/{{news.id}}" style="font-size: 20px;">{{news.title}}</a>
+                                    <p class="mt-3">{{news.content}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mt-5">
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h2 class="sw-title">Danh mục</h2>
+                        <div class="category">
+                            <ul *ngFor="let item of topics">
+                                <li><a href="/item/{{item.id}}">{{item.topicName}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
